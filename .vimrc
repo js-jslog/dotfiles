@@ -19,6 +19,7 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'vim-syntastic/syntastic'
 Plugin 'gregsexton/gitv'
 Plugin 'morhetz/gruvbox'
+Plugin 'gcmt/taboo.vim'
 "2. plugin from http://vim-scripts.org/vim/scripts.html
 " Plugin 'L9'
 "3. Git plugin not hosted on GitHub
