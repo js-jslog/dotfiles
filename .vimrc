@@ -21,6 +21,8 @@ Plugin 'vim-syntastic/syntastic'
 Plugin 'gregsexton/gitv'
 Plugin 'morhetz/gruvbox'
 Plugin 'gcmt/taboo.vim'
+Plugin 'pangloss/vim-javascript'
+Plugin 'mxw/vim-jsx'
 "2. plugin from http://vim-scripts.org/vim/scripts.html
 " Plugin 'L9'
 "3. Git plugin not hosted on GitHub
@@ -139,18 +141,28 @@ set background=dark
 
 set noshowmode
 
-let g:lightline = {
-            \ 'colorscheme': 'solarized',
-            \ 'active': {
-            \   'left':[ [ 'mode', 'paste' ],
-            \            [ 'gitbranch', 'readonly', 'filename', 'modified' ]
-            \   ]
-            \ },
-            \ 'component_function': {
-            \   'gitbranch': 'fugitive#head',
-            \   'filename': 'LightLineFilename',
-            \ },
-            \ }
-function! LightLineFilename()
-    return expand('%')
-endfunction
+" pangloss concealing
+let g:javascript_conceal_function             = "ƒ"
+let g:javascript_conceal_null                 = "ø"
+let g:javascript_conceal_this                 = "@"
+let g:javascript_conceal_return               = "⇚"
+let g:javascript_conceal_undefined            = "¿"
+let g:javascript_conceal_NaN                  = "ℕ"
+let g:javascript_conceal_arrow_function       = "⇒"
+set conceallevel=1
+
+" let g:lightline = {
+"             \ 'colorscheme': 'solarized',
+"             \ 'active': {
+"             \   'left':[ [ 'mode', 'paste' ],
+"             \            [ 'gitbranch', 'readonly', 'filename', 'modified' ]
+"             \   ]
+"             \ },
+"             \ 'component_function': {
+"             \   'gitbranch': 'fugitive#head',
+"             \   'filename': 'LightLineFilename',
+"             \ },
+"             \ }
+" function! LightLineFilename()
+"     return expand('%')
+" endfunction
