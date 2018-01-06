@@ -14,7 +14,8 @@ Plugin 'VundleVim/Vundle.vim'
 " The following are examples of different formats supported.
 "1. plugin on GitHub repo
 Plugin 'tpope/vim-fugitive'
-Plugin 'itchyny/lightline.vim'
+" Plugin 'itchyny/lightline.vim'
+Plugin 'vim-airline/vim-airline'
 Plugin 'scrooloose/nerdtree'
 Plugin 'vim-syntastic/syntastic'
 Plugin 'gregsexton/gitv'
