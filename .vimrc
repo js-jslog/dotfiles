@@ -14,12 +14,12 @@ Plugin 'VundleVim/Vundle.vim'
 " The following are examples of different formats supported.
 "1. plugin on GitHub repo
 Plugin 'tpope/vim-fugitive'
-" Plugin 'itchyny/lightline.vim'
+Plugin 'powerline/powerline-fonts'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
+Plugin 'w0rp/ale'
 Plugin 'bling/vim-bufferline'
 Plugin 'scrooloose/nerdtree'
-Plugin 'vim-syntastic/syntastic'
 Plugin 'gregsexton/gitv'
 Plugin 'morhetz/gruvbox'
 Plugin 'gcmt/taboo.vim'
@@ -68,6 +68,20 @@ nmap <C-j> <C-w>j
 nmap <C-k> <C-w>k
 nmap <C-l> <C-w>l
 
+:let mapleader = "-"
+
+" " Copy to clipboard
+vnoremap  <leader>y  "+y
+nnoremap  <leader>Y  "+yg_
+nnoremap  <leader>y  "+y
+nnoremap  <leader>yy  "+yy
+
+" " Paste from clipboard
+nnoremap <leader>p "+p
+nnoremap <leader>P "+P
+vnoremap <leader>p "+p
+vnoremap <leader>P "+P
+
 syntax on
 " filetype plugin indent on
 
@@ -75,8 +89,8 @@ syntax on
 set diffopt+=vertical
 
 filetype plugin indent on
-set tabstop=4
-set shiftwidth=4
+set tabstop=2
+set shiftwidth=2
 set expandtab
 set number
 set cursorline
@@ -127,77 +141,12 @@ let NERDTreeShowHidden=1
 map <F2> :NERDTreeToggle<CR>
 map nt :NERDTreeToggle<CR>
 
-" linting config for syntastic
-set statusline+=%#warningsmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-let g:syntastic_javascript_checkers = ['eslint']
-
 colorscheme gruvbox
 set background=dark
 
 set noshowmode
 
-" pangloss concealing
-let g:javascript_conceal_function             = "ƒ"
-let g:javascript_conceal_null                 = "ø"
-let g:javascript_conceal_this                 = "@"
-let g:javascript_conceal_return               = "⇚"
-let g:javascript_conceal_undefined            = "¿"
-let g:javascript_conceal_NaN                  = "ℕ"
-let g:javascript_conceal_arrow_function       = "⇒"
-set conceallevel=1
-
 let g:airline_theme="base16"
 
 " air-line
 let g:airline_powerline_fonts = 1
-
-" if !exists('g:airline_symbols')
-"     let g:airline_symbols = {}
-" endif
-
-" unicode symbols
-" let g:airline_left_sep = '»'
-" let g:airline_left_sep = '▶'
-" let g:airline_right_sep = '«'
-" let g:airline_right_sep = '◀'
-" let g:airline_symbols.linenr = '␊'
-" let g:airline_symbols.linenr = '␤'
-" let g:airline_symbols.linenr = '¶'
-" let g:airline_symbols.branch = '⎇'
-" let g:airline_symbols.paste = 'ρ'
-" let g:airline_symbols.paste = 'Þ'
-" let g:airline_symbols.paste = '∥'
-" let g:airline_symbols.whitespace = 'Ξ'
-
-" airline symbols
-" let g:airline_left_sep = ''
-" let g:airline_left_alt_sep = ''
-" let g:airline_right_sep = ''
-" let g:airline_right_alt_sep = ''
-" let g:airline_symbols.branch = ''
-" let g:airline_symbols.readonly = ''
-" let g:airline_symbols.linenr = ''
-
-
-" let g:lightline = {
-"             \ 'colorscheme': 'solarized',
-"             \ 'active': {
-"             \   'left':[ [ 'mode', 'paste' ],
-"             \            [ 'gitbranch', 'readonly', 'filename', 'modified' ]
-"             \   ]
-"             \ },
-"             \ 'component_function': {
-"             \   'gitbranch': 'fugitive#head',
-"             \   'filename': 'LightLineFilename',
-"             \ },
-"             \ }
-" function! LightLineFilename()
-"     return expand('%')
-" endfunction
