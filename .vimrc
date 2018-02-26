@@ -13,6 +13,7 @@ Plugin 'VundleVim/Vundle.vim'
 " Keep Plugin commands between vundle#begin/end.
 " The following are examples of different formats supported.
 "1. plugin on GitHub repo
+Plugin 'kana/vim-fakeclip'
 Plugin 'tpope/vim-fugitive'
 Plugin 'powerline/powerline-fonts'
 Plugin 'vim-airline/vim-airline'
