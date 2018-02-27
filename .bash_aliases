@@ -1,3 +1,5 @@
+# universals
+alias dots='cd ~/dotfiles'
 alias setclip="xclip -selection c"
 alias getclip="xclip -selection c -o"
 
@@ -40,7 +42,8 @@ alias webapps="cd ~/rsl/webapps/"
 alias cstart="sh ~/rsl/tomcat/bin/catalina.sh start"
 alias cstop="sh ~/rsl/tomcat/bin/catalina.sh stop"
 
-alias rhi="sh rhino.sh"
+alias rhi="sh rhino.sh -e 'load(\"main.js\")'"
+alias rhitest="sh rhino.sh -e 'load(\'test.js\')'"
 
 # home navigation
 alias beast='cd /mnt/md0/Beast/'
