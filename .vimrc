@@ -18,9 +18,10 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-speeddating'
 Plugin 'tpope/vim-sleuth'
-Plugin 'hari-rangarajan/CCTree'
-Plugin 'majutsushi/tagbar'
-Plugin 'kien/ctrlp.vim'
+Plugin 'takac/vim-hardtime'
+"Plugin 'hari-rangarajan/CCTree'
+"Plugin 'majutsushi/tagbar'
+"Plugin 'kien/ctrlp.vim'
 Plugin 'powerline/powerline-fonts'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
@@ -157,3 +158,7 @@ let g:airline_theme="base16"
 
 " air-line
 let g:airline_powerline_fonts = 1
+
+" activate hardtime
+let g:hardtime_default_on = 1
+
