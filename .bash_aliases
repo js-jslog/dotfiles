@@ -1,4 +1,6 @@
 # universals
+alias sourcerc="source ~/.bashrc"
+alias dotaliases="cp ~/dotfiles/.bash_aliases ~/.bash_aliases && sourcerc"
 alias dots="cd ~/dotfiles"
 alias downs="cd ~/Downloads"
 alias setclip="xclip -selection c"
