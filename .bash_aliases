@@ -1,5 +1,6 @@
 # universals
-alias dots='cd ~/dotfiles'
+alias dots="cd ~/dotfiles"
+alias downs="cd ~/Downloads"
 alias setclip="xclip -selection c"
 alias getclip="xclip -selection c -o"
 
@@ -43,12 +44,12 @@ alias cstart="sh ~/rsl/tomcat/bin/catalina.sh start"
 alias cstop="sh ~/rsl/tomcat/bin/catalina.sh stop"
 
 alias rhi="sh rhino.sh -e 'load(\"main.js\")'"
-alias rhitest="sh rhino.sh -e 'load(\'test.js\')'"
+alias rhitest="sh rhino.sh -e 'load(\"test.js\")'"
 
 # home navigation
-alias beast='cd /mnt/md0/Beast/'
-alias video='cd /mnt/md0/Beast/Video/'
-alias nis='cd /mnt/md0/Beast/Study/spanish/notes_in_spanish_premium/notes_in_spanish_premium_pack2/'
-alias film='cd /mnt/md0/Beast/Video/Film/'
-alias tv='cd /mnt/md0/Beast/Video/TV/'
-alias development='cd /mnt/md0/Beast/development/'
+alias beast="cd /mnt/md0/Beast/"
+alias video="cd /mnt/md0/Beast/Video/"
+alias nis="cd /mnt/md0/Beast/Study/spanish/notes_in_spanish_premium/notes_in_spanish_premium_pack2/"
+alias film="cd /mnt/md0/Beast/Video/Film/"
+alias tv="cd /mnt/md0/Beast/Video/TV/"
+alias development="cd /mnt/md0/Beast/development/"
