@@ -1,5 +1,6 @@
 # universals
 alias sourcerc="source ~/.bashrc"
+alias modal="vim ~/dotfiles/.bash_aliases && cp ~/dotfiles/.bash_aliases ~/.bash_aliases && sourcerc"
 alias dotaliases="cp ~/dotfiles/.bash_aliases ~/.bash_aliases && sourcerc"
 alias dots="cd ~/dotfiles"
 alias downs="cd ~/Downloads"
