@@ -1,0 +1,29 @@
+#! /bin/bash
+function appmap {
+  APP=$1
+  if [[ -z "${ANSIBLE}" ]]; then
+    ANSIBLE="$HOME/rsl/ansible-rsl"
+  fi
+  ENV_MAPPINGS="$ANSIBLE/roles/apache/files/rsl_env_mappings.conf"
+  SERVER=$(cat $ENV_MAPPINGS | grep $APP | grep -oE '[^ ]+$')
+  printf $SERVER
+}
+function dbmap {
+  APP=$1
+  if [[ -z "${ANSIBLE}" ]]; then
+    ANSIBLE="$HOME/rsl/ansible-rsl"
+  fi
+  SERVICE_VARS="$ANSIBLE/service_vars/$APP.yml"
+  SERVER=$(cat $SERVICE_VARS | grep DB_HOST | grep -oE '[^ ]+$')
+  printf $SERVER
+}
+function sshapp {
+  APP=$1
+  SERVER=$(appmap $APP)
+  ssh $SERVER
+}
+function sshdb {
+  APP=$1
+  SERVER=$(dbmap $APP)
+  ssh $SERVER
+}
