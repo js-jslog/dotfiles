@@ -23,7 +23,7 @@ function sshapp {
   RHINO=''
   RHINO='./rhino.sh -e "load(\"main.js\")" -f -;'
   BASH='/bin/bash;'
-  ssh $SERVER -t 'command cd /home/rsl/webapps/cptg_test; ' $RHINO $BASH
+  ssh $SERVER -t 'command cd /home/rsl/webapps/'$APP'; ' $RHINO $BASH
 }
 function sshdb {
   APP=$1
