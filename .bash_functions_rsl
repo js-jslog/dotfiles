@@ -20,7 +20,9 @@ function dbmap {
 function sshapp {
   APP=$1
   SERVER=$(appmap $APP)
-  ssh $SERVER
+  RHINO='./rhino.sh -e "load(\"main.js\")" -f -;'
+  BASH='/bin/bash;'
+  ssh $SERVER -t 'command cd /home/rsl/webapps/cptg_test; ' $RHINO $BASH
 }
 function sshdb {
   APP=$1
