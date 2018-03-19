@@ -19,6 +19,7 @@ alias rulg="cd ~/rsl/webapps/rulg_devt"
 alias sfwk="cd ~/rsl/webapps/sfwk_devt"
 alias swtn="cd ~/rsl/webapps/swtn_devt"
 alias uplc="cd ~/rsl/webapps/uplc_devt"
+alias uutl="cd ~/rsl/webapps/uutl_devt"
 alias vani="cd ~/rsl/webapps/vani_devt"
 
 alias 04="cd ~/rsl/webapps/R6_04"
@@ -46,8 +47,8 @@ alias webapps="cd ~/rsl/webapps/"
 alias cstart="sh ~/rsl/tomcat/bin/catalina.sh start"
 alias cstop="sh ~/rsl/tomcat/bin/catalina.sh stop"
 
-alias rhi="sh rhino.sh -e 'load(\"main.js\")'"
-alias rhitest="sh rhino.sh -e 'load(\"test.js\")'"
+alias rhi="sh rhino.sh -e 'load(\"main.js\")' -f -"
+alias rhitest="sh rhino.sh -e 'load(\"test.js\")' -f -"
 
 # home navigation
 alias beast="cd /mnt/md0/Beast/"
