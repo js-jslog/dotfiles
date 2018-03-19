@@ -6,6 +6,7 @@ alias dots="cd ~/dotfiles"
 alias downs="cd ~/Downloads"
 alias setclip="xclip -selection c"
 alias getclip="xclip -selection c -o"
+alias rm-docker-containers="sudo docker ps -aq --no-trunc -f status=exited | sudo xargs docker rm"
 
 # rullion navigation
 alias bail="cd ~/rsl/webapps/bail_devt"
