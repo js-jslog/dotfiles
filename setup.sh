@@ -1,5 +1,4 @@
 #!/bin/bash
-mkdir -p ~/.vim/bundle
 sudo rm -r ~/.vim || true
 cp -n ~/.bashrc ~/.bashrc.original
 cp -rf ./.bashrc ~/.bashrc
