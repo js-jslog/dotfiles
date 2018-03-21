@@ -147,7 +147,8 @@ set encoding=utf-8
 let g:NERDTreeDirArrows=0
 let NERDTreeShowHidden=1
 map <F2> :NERDTreeToggle<CR>
-map nt :NERDTreeToggle<CR>
+map ,m :NERDTreeToggle<CR>
+map ,n :NERDTreeFind<CR>
 
 colorscheme gruvbox
 set background=dark
@@ -162,3 +163,5 @@ let g:airline_powerline_fonts = 1
 " activate hardtime
 let g:hardtime_default_on = 1
 
+" ctrlp can see hidden files
+let g:ctrlp_show_hidden = 1
