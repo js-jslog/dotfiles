@@ -20,10 +20,14 @@ fi
 
 # overwrite existing symbolic links if they exist
 ln -sf ~/dotfiles-personal/.bashrc ~/.bashrc
-ln -sf ~/dotfiles-persoanl/.bash_aliases ~/.bash_aliases
-ln -sf ~/dotfiles-persoanl/.vimrc ~/.vimrc
+ln -sf ~/dotfiles-personal/.bash_aliases ~/.bash_aliases
+ln -sf ~/dotfiles-personal/.vimrc ~/.vimrc
 ln -sf ~/dotfiles-personal/.tmux.conf ~/.tmux.conf
-ln -sf ~/dotfiles-personal/bash.d ~/bash.d
+# overwriting sybolic links doesn't work if they are linked to directories apparently
+# need to remove it
+rm ~/bash.d || true
+# now we can create the link
+ln -s ~/dotfiles-personal/bash.d ~/bash.d
 
 # filling the profile.d folder with scripts to be run at login shell initiation
 # profile files should contain exported environment variables and functions for login shells
