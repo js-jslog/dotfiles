@@ -20,6 +20,9 @@ fi
 if [[ ! -L ~/.gitconfig ]]; then
   mv ~/.gitconfig ~/.gitconfig.original 2>/dev/null
 fi
+if [[ ! -L ~/.ssh/config ]]; then
+  mv ~/.ssh/config ~/.ssh/config.original 2>/dev/null
+fi
 
 # overwrite existing symbolic links if they exist
 ln -sf ~/dotfiles-personal/.bashrc ~/.bashrc
@@ -27,6 +30,9 @@ ln -sf ~/dotfiles-personal/.bash_aliases ~/.bash_aliases
 ln -sf ~/dotfiles-personal/.vimrc ~/.vimrc
 ln -sf ~/dotfiles-personal/.tmux.conf ~/.tmux.conf
 ln -sf ~/dotfiles-personal/.gitconfig ~/.gitconfig
+mkdir -p ~/.ssh
+ln -sf ~/dotfiles-personal/.ssh/config ~/.ssh/config
+
 # overwriting sybolic links doesn't work if they are linked to directories apparently
 # need to remove it
 rm ~/bash.d || true
