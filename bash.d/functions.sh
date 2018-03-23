@@ -4,10 +4,8 @@ function buildvim {
   git clone git@github.com:VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
   vim +PluginInstall +qall
 }
-function deploybash {
-  cp ~/dotfiles/.bash_functions_rsl ~/.
-  source ~/.bashrc
-}
+
+# rullion
 function appmap {
   APP=$1
   if [[ -z "${ANSIBLE}" ]]; then
