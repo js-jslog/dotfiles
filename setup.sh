@@ -17,12 +17,16 @@ fi
 if [[ ! -L ~/.tmux.conf ]]; then
   mv ~/.tmux.conf ~/.tmux.conf.original 2>/dev/null
 fi
+if [[ ! -L ~/.gitconfig ]]; then
+  mv ~/.gitconfig ~/.gitconfig.original 2>/dev/null
+fi
 
 # overwrite existing symbolic links if they exist
 ln -sf ~/dotfiles-personal/.bashrc ~/.bashrc
 ln -sf ~/dotfiles-personal/.bash_aliases ~/.bash_aliases
 ln -sf ~/dotfiles-personal/.vimrc ~/.vimrc
 ln -sf ~/dotfiles-personal/.tmux.conf ~/.tmux.conf
+ln -sf ~/dotfiles-personal/.gitconfig ~/.gitconfig
 # overwriting sybolic links doesn't work if they are linked to directories apparently
 # need to remove it
 rm ~/bash.d || true

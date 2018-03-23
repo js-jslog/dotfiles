@@ -1,0 +1,10 @@
+[user]
+	email = josephsinfield@yahoo.com
+	name = js-jslog
+[diff]
+	tool = vimdiff
+[difftool]
+	prompt = false
+[alias]
+	d = difftool
+
