@@ -116,12 +116,14 @@ if ! shopt -oq posix; then
   fi
 fi
 
-export EDITOR='vim'
-
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
-if [[ -f ~/.bash_functions_rsl ]]; then
-  source ~/.bash_functions_rsl
+# runs a collection of bash scripts. this is analogeous to the 
+# /etc/profile.d folder but for interactive bash shells rather 
+# than login shells
+if [ -d ~/bash.d ]; then
+  for i in ~/bash.d/*.sh; do
+    if [ -r $i ]; then
+      . $i
+    fi
+  done
+  unset i
 fi

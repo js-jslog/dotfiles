@@ -1,4 +1,13 @@
 #! /bin/bash
+function buildvim {
+  sudo rm -r ~/.vim || true
+  git clone git@github.com:VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+  vim +PluginInstall +qall
+}
+function deploybash {
+  cp ~/dotfiles/.bash_functions_rsl ~/.
+  source ~/.bashrc
+}
 function appmap {
   APP=$1
   if [[ -z "${ANSIBLE}" ]]; then
@@ -41,8 +50,4 @@ function rsl {
   else
     sshapp $APP
   fi
-}
-function deploybash {
-  cp ~/dotfiles/.bash_functions_rsl ~/.
-  source ~/.bashrc
 }
