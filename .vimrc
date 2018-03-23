@@ -108,8 +108,8 @@ set splitright
 
 " Auto resize vim splits to make active split more readible
 " set winwidth=104
-set winheight=5 " this looks like a necessary hack to prepare for the next 2 lines
-set winminheight=5
+set winheight=20 " this looks like a necessary hack to prepare for the next 2 lines
+set winminheight=20
 set winheight=999
 
 " Scrolling

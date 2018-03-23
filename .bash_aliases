@@ -7,6 +7,9 @@ alias downs="cd ~/Downloads"
 alias setclip="xclip -selection c"
 alias getclip="xclip -selection c -o"
 alias rm-docker-containers="sudo docker ps -aq --no-trunc -f status=exited | sudo xargs docker rm"
+alias jctl="journalctl -xe"
+alias tomcatservice="systemctl cat tomcat.service"
+alias ansiblevars="ansible -m setup localhost"
 
 # rullion navigation
 alias 04="cd ~/rsl/webapps/R6_04"
@@ -25,7 +28,7 @@ alias 23="cd ~/rsl/webapps/R6_23"
 alias 24="cd ~/rsl/webapps/R6_24"
 alias 25="cd ~/rsl/webapps/R6_25"
 
-alias ansible="cd ~/rsl/ansible-rsl"
+alias ansible-rsl="cd ~/rsl/ansible-rsl"
 alias tomcat="cd ~/rsl/tomcat"
 alias cdn="cd ~/rsl/webapps/cdn"
 alias logs="cd ~/rsl/logs"
