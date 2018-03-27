@@ -97,9 +97,9 @@ syntax on
 set diffopt+=vertical
 
 filetype plugin indent on
-set tabstop=2
-set shiftwidth=2
 set expandtab
+set shiftwidth=4
+set softtabstop=4
 set number
 set cursorline
 set visualbell
