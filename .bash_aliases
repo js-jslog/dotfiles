@@ -1,7 +1,9 @@
 # universals
 alias sourcerc="source ~/.bashrc"
 
+alias ao="agenton"
 alias sshconfig="less $HOME/.ssh/config"
+
 alias downs="cd ~/Downloads"
 
 # fix vim copy (apparently)
