@@ -1,9 +1,5 @@
-export dotfiles_me=$(dirname "${BASH_SOURCE}")
-
 # universals
 alias sourcerc="source ~/.bashrc"
-alias dotsme="cd $dotfiles_me"
-alias dotsmemodal="vim $dotfiles_me/.bash_aliases && source ~/.bashrc"
 
 alias sshconfig="less $HOME/.ssh/config"
 alias downs="cd ~/Downloads"
