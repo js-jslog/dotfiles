@@ -1,10 +1,11 @@
 [user]
-	email = jhs4jbs@hotmail.co.uk
-	name = js-jslog
+  email = jhs4jbs@hotmail.co.uk
+  name = js-jslog
 [diff]
-	tool = vimdiff
+  tool = vimdiff
 [difftool]
-	prompt = false
+  prompt = false
 [alias]
-	d = difftool
-
+  d = difftool
+[push]
+  default = simple
