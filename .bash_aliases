@@ -27,3 +27,12 @@ alias nis="cd /mnt/md0/Beast/Study/spanish/notes_in_spanish_premium/notes_in_spa
 alias film="cd /mnt/md0/Beast/Video/Film/"
 alias tv="cd /mnt/md0/Beast/Video/TV/"
 alias development="cd /mnt/md0/Beast/development/"
+
+# git
+alias gs="git status"
+alias gd="git diff"
+alias gdt="git difftool"
+alias gps="git push"
+alias gpl="git pull"
+alias gc="git commit -am"
+alias gb="git checkout -b"
