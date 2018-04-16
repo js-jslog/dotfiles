@@ -1,5 +1,6 @@
 set nocompatible              " be iMproved, required
 set shell=/bin/bash           " force the type of shell - needed specifically in windows ubuntu
+set smartcase
 filetype off                  " required
 
 " set the runtime path to include Vundle and initialize
