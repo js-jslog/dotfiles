@@ -28,6 +28,9 @@ alias film="cd /mnt/md0/Beast/Video/Film/"
 alias tv="cd /mnt/md0/Beast/Video/TV/"
 alias development="cd /mnt/md0/Beast/development/"
 
+# ls
+alias la="ls -lha"
+
 # git
 alias gs="git status"
 alias gd="git diff"
