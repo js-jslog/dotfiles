@@ -20,6 +20,7 @@ Plugin 'VundleVim/Vundle.vim'
 "1. plugin on GitHub repo
 Plugin 'kana/vim-fakeclip'
 Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-unimpaired'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-speeddating'
 Plugin 'tpope/vim-sleuth'
