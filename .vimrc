@@ -72,8 +72,11 @@ call vundle#end()            " required
 " Put your non-Plugin stuff after this line
 
 
-imap jj <ESC>
 imap jk <ESC>
+
+:set hlsearch
+:nnoremap <F8> :let @/='\<<C-R>=expand("<cword>")<CR>\>'<CR>:set hls<CR>
+:noremap <F4> :set hlsearch! hlsearch?<CR>
 
 " ONLY USEFUL IF REMAPPING , IN TMUX
 " imap m. ,
