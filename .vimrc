@@ -149,14 +149,10 @@ nnoremap <silent> <Left> :vertical resize -5<cr>
 nnoremap <silent> <Up> :resize +5<cr>
 nnoremap <silent> <Down> :resize -5<cr>
 
-" autostart nerdtree
-autocmd vimenter * NERDTree
-
 " fix subdirectory navigation NERDTree
 set encoding=utf-8
 let g:NERDTreeDirArrows=0
 let NERDTreeShowHidden=1
-map <F2> :NERDTreeToggle<CR>
 map ,m :NERDTreeToggle<CR>
 map ,n :NERDTreeFind<CR>
 
