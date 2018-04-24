@@ -88,14 +88,6 @@ nmap <C-j> <C-w>j
 nmap <C-k> <C-w>k
 nmap <C-l> <C-w>l
 
-:let mapleader = "-"
-
-" " Copy to clipboard
-vnoremap  <leader>y  "+y
-nnoremap  <leader>Y  "+yg_
-nnoremap  <leader>y  "+y
-nnoremap  <leader>yy  "+yy
-
 " " Paste from clipboard
 nnoremap <leader>p "+p
 nnoremap <leader>P "+P
