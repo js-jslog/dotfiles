@@ -1,6 +1,8 @@
 set nocompatible              " be iMproved, required
 set shell=/bin/bash           " force the type of shell - needed specifically in windows ubuntu
 set smartcase
+set encoding=utf-8
+
 filetype off                  " required
 
 " set the runtime path to include Vundle and initialize
@@ -20,6 +22,7 @@ Plugin 'VundleVim/Vundle.vim'
 "1. plugin on GitHub repo
 Plugin 'kana/vim-fakeclip'
 Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-vinegar'
 Plugin 'tpope/vim-unimpaired'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-speeddating'
@@ -33,7 +36,6 @@ Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'w0rp/ale'
 "Plugin 'bling/vim-bufferline'
-Plugin 'scrooloose/nerdtree'
 Plugin 'gregsexton/gitv'
 Plugin 'morhetz/gruvbox'
 Plugin 'gcmt/taboo.vim'
@@ -148,13 +150,6 @@ nnoremap <silent> <Right> :vertical resize +5<cr>
 nnoremap <silent> <Left> :vertical resize -5<cr>
 nnoremap <silent> <Up> :resize +5<cr>
 nnoremap <silent> <Down> :resize -5<cr>
-
-" fix subdirectory navigation NERDTree
-set encoding=utf-8
-let g:NERDTreeDirArrows=0
-let NERDTreeShowHidden=1
-map ,m :NERDTreeToggle<CR>
-map ,n :NERDTreeFind<CR>
 
 colorscheme gruvbox
 set background=dark
