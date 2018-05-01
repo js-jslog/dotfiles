@@ -1,8 +1,8 @@
 #! /bin/bash
 function buildvim {
   sudo rm -r ~/.vim || true
-  git clone git@github.com:VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-  vim +PluginInstall +qall
+  git clone git@github.com:k-takata/minpac.git ~/.vim/pack/minpac/opt/minpac
+  vim -c "call minpac#update() | qall"
 }
 
 function agenton {

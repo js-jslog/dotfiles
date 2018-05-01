@@ -9,70 +9,32 @@ filetype off                  " required
 set rtp+=~/.vim/bundle/Vundle.vim
 " set vim to use ctags
 set tags=tags
-" vundle install
-call vundle#begin()
-" alternatively, pass a path where Vundle should install plugins
-"call vundle#begin('~/some/path/here')
 
-" let Vundle manage Vundle, required
-Plugin 'VundleVim/Vundle.vim'
-
-" Keep Plugin commands between vundle#begin/end.
-" The following are examples of different formats supported.
-"1. plugin on GitHub repo
-Plugin 'kana/vim-fakeclip'
-Plugin 'tpope/vim-fugitive'
-Plugin 'tpope/vim-vinegar'
-Plugin 'tpope/vim-unimpaired'
-Plugin 'tpope/vim-surround'
-Plugin 'tpope/vim-speeddating'
-Plugin 'tpope/vim-sleuth'
-Plugin 'takac/vim-hardtime'
-"Plugin 'hari-rangarajan/CCTree'
-"Plugin 'majutsushi/tagbar'
-Plugin 'kien/ctrlp.vim'
-Plugin 'powerline/powerline-fonts'
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
-Plugin 'w0rp/ale'
-"Plugin 'bling/vim-bufferline'
-Plugin 'gregsexton/gitv'
-Plugin 'morhetz/gruvbox'
-Plugin 'gcmt/taboo.vim'
-Plugin 'pangloss/vim-javascript'
-Plugin 'mxw/vim-jsx'
-Plugin 'kien/rainbow_parentheses.vim'
-"2. plugin from http://vim-scripts.org/vim/scripts.html
-" Plugin 'L9'
-"3. Git plugin not hosted on GitHub
-" eg: Plugin 'git://git.wincent.com/command-t.git'
-"4. git repos on your local machine (i.e. when working on your own plugin)
-" eg: Plugin 'file:///home/gmarik/path/to/plugin'
-" The sparkup vim script is in a subdirectory of this repo called vi,
-" Pass the path to set the runtimepath properly.
-" eg: Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
-" Install L9 and avoid a Naming conflict if you've already installed a
-" different version somewhere else.
-" Plugin 'ascenator/L9', {'name': 'newL9'}
-
-" All of your Plugins must be added before the following line
-call vundle#end()            " required
-" REMOVE THIS IF INDENTING SEEMS TO BE WORKING. I'D RATHER HAVE IT BELOW WITH
-" THE REST: filetype plugin indent on    " required
-" To ignore plugin indent changes, instead use:
-"filetype plugin on
-"
-" Brief help
-" :PluginList       - lists configured plugins
-" :PluginInstall    - installs plugins; append `!` to update or just
-" :PluginUpdate
-" :PluginSearch foo - searches for foo; append `!` to refresh local cache
-" :PluginClean      - confirms removal of unused plugins; append `!` to
-" WHY DOES THIS ERROR auto-approve removal
-"
-" see :h vundle for more details or wiki for FAQ
-" Put your non-Plugin stuff after this line
-
+packadd minpac
+call minpac#init()
+call minpac#add('kana/vim-fakeclip')
+call minpac#add('tpope/vim-fugitive')
+call minpac#add('tpope/vim-vinegar')
+call minpac#add('tpope/vim-unimpaired')
+call minpac#add('tpope/vim-surround')
+call minpac#add('tpope/vim-speeddating')
+call minpac#add('tpope/vim-sleuth')
+call minpac#add('takac/vim-hardtime')
+"call minpac#add('hari-rangarajan/CCTree')
+"call minpac#add('majutsushi/tagbar')
+call minpac#add('kien/ctrlp.vim')
+call minpac#add('powerline/powerline-fonts')
+call minpac#add('vim-airline/vim-airline')
+call minpac#add('vim-airline/vim-airline-themes')
+call minpac#add('w0rp/ale')
+"call minpac#add('bling/vim-bufferline')
+call minpac#add('gregsexton/gitv')
+call minpac#add('morhetz/gruvbox')
+call minpac#add('gcmt/taboo.vim')
+call minpac#add('pangloss/vim-javascript')
+call minpac#add('mxw/vim-jsx')
+call minpac#add('kien/rainbow_parentheses.vim')
+call minpac#add('k-takata/minpac', {'type': 'opt'})
 
 imap jk <ESC>
 
