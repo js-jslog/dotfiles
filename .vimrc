@@ -5,8 +5,6 @@ set encoding=utf-8
 
 filetype off                  " required
 
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
 " set vim to use ctags
 set tags=tags
 
