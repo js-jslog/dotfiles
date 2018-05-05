@@ -8,31 +8,30 @@ filetype off                  " required
 " set vim to use ctags
 set tags=tags
 
-packadd minpac
-call minpac#init()
-call minpac#add('kana/vim-fakeclip')
-call minpac#add('tpope/vim-fugitive')
-call minpac#add('tpope/vim-vinegar')
-call minpac#add('tpope/vim-unimpaired')
-call minpac#add('tpope/vim-surround')
-call minpac#add('tpope/vim-speeddating')
-call minpac#add('tpope/vim-sleuth')
-call minpac#add('takac/vim-hardtime')
+call plug#begin('~/.vim/plugged')
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'w0rp/ale'
+Plug 'kien/ctrlp.vim'
+Plug 'kana/vim-fakeclip'
+Plug 'gregsexton/gitv'
+Plug 'morhetz/gruvbox'
+Plug 'takac/vim-hardtime'
+Plug 'pangloss/vim-javascript'
+Plug 'mxw/vim-jsx'
+Plug 'powerline/powerline-fonts'
+Plug 'kien/rainbow_parentheses.vim'
+Plug 'gcmt/taboo.vim'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-speeddating'
+Plug 'tpope/vim-sleuth'
+Plug 'tpope/vim-unimpaired'
+Plug 'tpope/vim-vinegar'
 "call minpac#add('hari-rangarajan/CCTree')
 "call minpac#add('majutsushi/tagbar')
-call minpac#add('kien/ctrlp.vim')
-call minpac#add('powerline/powerline-fonts')
-call minpac#add('vim-airline/vim-airline')
-call minpac#add('vim-airline/vim-airline-themes')
-call minpac#add('w0rp/ale')
 "call minpac#add('bling/vim-bufferline')
-call minpac#add('gregsexton/gitv')
-call minpac#add('morhetz/gruvbox')
-call minpac#add('gcmt/taboo.vim')
-call minpac#add('pangloss/vim-javascript')
-call minpac#add('mxw/vim-jsx')
-call minpac#add('kien/rainbow_parentheses.vim')
-call minpac#add('k-takata/minpac', {'type': 'opt'})
+call plug#end()
 
 imap jk <ESC>
 

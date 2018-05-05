@@ -1,8 +1,8 @@
-#! /bin/bash
 function buildvim {
   sudo rm -r ~/.vim || true
-  git clone git@github.com:k-takata/minpac.git ~/.vim/pack/minpac/opt/minpac
-  vim -c "call minpac#update() | qall"
+  curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  vim +PlugInstall +qall
 }
 
 function agenton {
