@@ -28,9 +28,9 @@ Plug 'tpope/vim-speeddating'
 Plug 'tpope/vim-sleuth'
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-vinegar'
-"call minpac#add('hari-rangarajan/CCTree')
-call minpac#add('majutsushi/tagbar')
-"call minpac#add('bling/vim-bufferline')
+"Plug 'hari-rangarajan/CCTree'
+Plug 'majutsushi/tagbar'
+"Plug 'bling/vim-bufferline'
 call plug#end()
 
 imap jk <ESC>
