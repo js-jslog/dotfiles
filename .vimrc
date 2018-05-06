@@ -29,7 +29,7 @@ Plug 'tpope/vim-sleuth'
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-vinegar'
 "call minpac#add('hari-rangarajan/CCTree')
-"call minpac#add('majutsushi/tagbar')
+call minpac#add('majutsushi/tagbar')
 "call minpac#add('bling/vim-bufferline')
 call plug#end()
 
@@ -140,6 +140,9 @@ let g:rbpt_colorpairs = [
     \ ]
 let g:rbpt_max = 16
 let g:rbpt_loadcmd_toggle = 0
+
+nnoremap <leader>. :CtrlPTag<cr>
+nnoremap <silent> <Leader>b :TagbarToggle<CR>
 
 " Rainbow-parenthese always on
 "au VimEnter * RainbowParenthesesToggle

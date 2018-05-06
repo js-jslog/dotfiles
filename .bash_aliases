@@ -43,3 +43,6 @@ alias gl="git log"
 alias gf="git fetch"
 alias gm="git checkout master"
 alias ga="git add --all"
+
+# ctags
+alias buildtags=ctags -R --exclude=node_modules --exclude=.git
