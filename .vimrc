@@ -31,6 +31,7 @@ Plug 'tpope/vim-vinegar'
 "Plug 'hari-rangarajan/CCTree'
 Plug 'majutsushi/tagbar'
 "Plug 'bling/vim-bufferline'
+Plug 'mmai/vim-markdown-wiki'
 call plug#end()
 
 imap jk <ESC>
