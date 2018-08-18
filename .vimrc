@@ -73,12 +73,12 @@ set splitright
 
 " Auto resize vim splits to make active split more readible
 " set winwidth=104
-set winheight=20 " this looks like a necessary hack to prepare for the next 2 lines
-set winminheight=20
-set winheight=999
+" set winheight=20 " this looks like a necessary hack to prepare for the next 2 lines
+" set winminheight=20
+" set winheight=999
 
 " Scrolling
-set scrolloff=8
+set scrolloff=1
 set sidescrolloff=15
 set sidescroll=1
 
@@ -119,6 +119,7 @@ let g:hardtime_default_on = 1
 
 " ctrlp can see hidden files
 let g:ctrlp_show_hidden = 1
+let g:ctrlp_custom_ignore = '\v[\/](node_modules|.git)$'
 
 " Rainbow-parentheses colours
 let g:rbpt_colorpairs = [
