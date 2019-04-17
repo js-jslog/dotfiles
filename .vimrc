@@ -104,7 +104,7 @@ nnoremap <silent> <Left> :vertical resize -5<cr>
 nnoremap <silent> <Up> :resize +5<cr>
 nnoremap <silent> <Down> :resize -5<cr>
 
-colorscheme gruvbox
+silent! colorscheme gruvbox
 set background=dark
 
 set noshowmode
