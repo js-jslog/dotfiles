@@ -12,6 +12,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'leafgarland/typescript-vim'
+Plug 'peitalin/vim-jsx-typescript'
 Plug 'w0rp/ale'
 Plug 'kien/ctrlp.vim'
 Plug 'kana/vim-fakeclip'
