@@ -9,33 +9,29 @@ filetype off                  " required
 set tags=tags
 
 call plug#begin('~/.vim/plugged')
-"Plug 'roxma/vim-hug-neovim-rpc'
-"Plug 'mhartington/nvim-typescript', { 'build': './install.sh' }
+Plug 'mhartington/nvim-typescript', { 'do': './install.sh' }
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-"Plug 'roxma/nvim-yarp'
-"Plug 'Shougo/denite.nvim'
-"Plug 'HerringtonDarkholme/yats.vim'
-Plug 'leafgarland/typescript-vim'
+Plug 'Shougo/denite.nvim'
+Plug 'HerringtonDarkholme/yats.vim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'ianks/vim-tsx'
-"Plug 'w0rp/ale'
-"Plug 'kien/ctrlp.vim'
+Plug 'w0rp/ale'
+Plug 'kien/ctrlp.vim'
 "Plug 'kana/vim-fakeclip'
-"Plug 'morhetz/gruvbox'
-"Plug 'takac/vim-hardtime'
+Plug 'morhetz/gruvbox'
+Plug 'takac/vim-hardtime'
 "Plug 'pangloss/vim-javascript'
 "Plug 'mxw/vim-jsx'
-"Plug 'powerline/powerline-fonts'
-"Plug 'tpope/vim-fugitive'
+Plug 'powerline/powerline-fonts'
+Plug 'tpope/vim-fugitive'
 "Plug 'tpope/vim-surround'
 "Plug 'tpope/vim-speeddating'
 "Plug 'tpope/vim-sleuth'
 "Plug 'tpope/vim-unimpaired'
-"Plug 'tpope/vim-vinegar'
-"Plug 'junegunn/gv.vim'
+Plug 'tpope/vim-vinegar'
+Plug 'junegunn/gv.vim'
 "Plug 'majutsushi/tagbar'
-"Plug 'mmai/vim-markdown-wiki'
+Plug 'mmai/vim-markdown-wiki'
 call plug#end()
 
 imap jk <ESC>
