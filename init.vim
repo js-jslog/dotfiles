@@ -8,7 +8,7 @@ filetype off                  " required
 " set vim to use ctags
 set tags=tags
 
-call plug#begin('~/.vim/plugged')
+call plug#begin()
 Plug 'mhartington/nvim-typescript', { 'do': './install.sh' }
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'Shougo/denite.nvim'
