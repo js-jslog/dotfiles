@@ -8,31 +8,29 @@ filetype off                  " required
 " set vim to use ctags
 set tags=tags
 
-call plug#begin('~/.vim/plugged')
+call plug#begin()
+Plug 'mhartington/nvim-typescript', { 'do': './install.sh' }
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'Shougo/denite.nvim'
+Plug 'HerringtonDarkholme/yats.vim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'leafgarland/typescript-vim'
-Plug 'peitalin/vim-jsx-typescript'
 Plug 'w0rp/ale'
 Plug 'kien/ctrlp.vim'
-Plug 'kana/vim-fakeclip'
+"Plug 'kana/vim-fakeclip'
 Plug 'morhetz/gruvbox'
 Plug 'takac/vim-hardtime'
-Plug 'pangloss/vim-javascript'
-Plug 'mxw/vim-jsx'
+"Plug 'pangloss/vim-javascript'
+"Plug 'mxw/vim-jsx'
 Plug 'powerline/powerline-fonts'
-Plug 'kien/rainbow_parentheses.vim'
-Plug 'gcmt/taboo.vim'
 Plug 'tpope/vim-fugitive'
-Plug 'tpope/vim-surround'
-Plug 'tpope/vim-speeddating'
-Plug 'tpope/vim-sleuth'
-Plug 'tpope/vim-unimpaired'
+"Plug 'tpope/vim-surround'
+"Plug 'tpope/vim-speeddating'
+"Plug 'tpope/vim-sleuth'
+"Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-vinegar'
 Plug 'junegunn/gv.vim'
-"Plug 'hari-rangarajan/CCTree'
-Plug 'majutsushi/tagbar'
-"Plug 'bling/vim-bufferline'
+"Plug 'majutsushi/tagbar'
 Plug 'mmai/vim-markdown-wiki'
 call plug#end()
 
@@ -72,12 +70,6 @@ set cursorcolumn
 set visualbell
 set ignorecase
 set splitright
-
-" Auto resize vim splits to make active split more readible
-" set winwidth=104
-" set winheight=20 " this looks like a necessary hack to prepare for the next 2 lines
-" set winminheight=20
-" set winheight=999
 
 " Scrolling
 set scrolloff=1
@@ -148,17 +140,11 @@ let g:rbpt_loadcmd_toggle = 0
 nnoremap <leader>. :CtrlPTag<cr>
 nnoremap <silent> <Leader>b :TagbarToggle<CR>
 
-" Rainbow-parenthese always on
-"au VimEnter * RainbowParenthesesToggle
-"au Syntax * RainbowParenthesesLoadRound
-"au Syntax * RainbowParenthesesLoadSquare
-"au Syntax * RainbowParenthesesLoadBraces
-
 " Asynchronous Lint Engine (ALE)
 " Limit linters used for JavaScript.
 let g:ale_linters = {
 \  'javascript': ['eslint', 'flow'],
-\  'jsx': ['eslint', 'flow'],
+\  'typescript': ['tsserver', 'eslint'],
 \}
 highlight clear ALEErrorSign " otherwise uses error bg color (typically red)
 highlight clear ALEWarningSign " otherwise uses warn bg color (typically yellow)
@@ -171,3 +157,5 @@ let g:ale_echo_msg_format = '%linter% says %s'
 " Map keys to navigate between lines with errors and warnings.
 nnoremap <leader>an :ALENextWrap<cr>
 nnoremap <leader>ap :ALEPreviousWrap<cr>
+
+let g:deoplete#enable_at_startup = 1
