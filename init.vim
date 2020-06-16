@@ -5,9 +5,6 @@ set encoding=utf-8
 
 filetype off                  " required
 
-" set vim to use ctags
-"set tags=tags
-
 call plug#begin()
 Plug 'neoclide/coc.nvim' , {'branch': 'release'}
 Plug 'neoclide/coc-eslint', {'do': 'yarn install --frozen-lockfile'}
@@ -20,7 +17,7 @@ Plug 'HerringtonDarkholme/yats.vim'
 "Plug 'vim-airline/vim-airline'
 "Plug 'vim-airline/vim-airline-themes'
 Plug 'w0rp/ale'
-"Plug 'kien/ctrlp.vim'
+Plug 'kien/ctrlp.vim'
 ""Plug 'kana/vim-fakeclip'
 Plug 'morhetz/gruvbox'
 "Plug 'takac/vim-hardtime'
@@ -115,34 +112,13 @@ set noshowmode
 "" activate hardtime
 "let g:hardtime_default_on = 1
 "
-"" ctrlp can see hidden files
-"let g:ctrlp_show_hidden = 1
-"let g:ctrlp_custom_ignore = '\v[\/](node_modules|.git)$'
+" ctrlp can see hidden files
+let g:ctrlp_show_hidden = 1
+let g:ctrlp_custom_ignore = '\v[\/](node_modules|.git)$'
+
 "
-"" Rainbow-parentheses colours
-"let g:rbpt_colorpairs = [
-"    \ ['brown',       'RoyalBlue3'],
-"    \ ['Darkblue',    'SeaGreen3'],
-"    \ ['darkgray',    'DarkOrchid3'],
-"    \ ['darkgreen',   'firebrick3'],
-"    \ ['darkcyan',    'RoyalBlue3'],
-"    \ ['darkred',     'SeaGreen3'],
-"    \ ['darkmagenta', 'DarkOrchid3'],
-"    \ ['brown',       'firebrick3'],
-"    \ ['gray',        'RoyalBlue3'],
-"    \ ['black',       'SeaGreen3'],
-"    \ ['darkmagenta', 'DarkOrchid3'],
-"    \ ['Darkblue',    'firebrick3'],
-"    \ ['darkgreen',   'RoyalBlue3'],
-"    \ ['darkcyan',    'SeaGreen3'],
-"    \ ['darkred',     'DarkOrchid3'],
-"    \ ['red',         'firebrick3'],
-"    \ ]
-"let g:rbpt_max = 16
-"let g:rbpt_loadcmd_toggle = 0
-"
-"nnoremap <leader>. :CtrlPTag<cr>
-"nnoremap <silent> <Leader>b :TagbarToggle<CR>
+nnoremap <leader>. :CtrlPTag<cr>
+nnoremap <silent> <Leader>b :TagbarToggle<CR>
 
 " Asynchronous Lint Engine (ALE)
 " Limit linters used for JavaScript.
