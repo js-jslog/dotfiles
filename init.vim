@@ -59,6 +59,9 @@ vnoremap <leader>P "+P
 filetype plugin indent on
 syntax on
 
+silent! colorscheme gruvbox
+set background=dark
+
 set expandtab
 set shiftwidth=2
 set tabstop=2
@@ -109,6 +112,4 @@ nnoremap <silent> <Left> :vertical resize -5<cr>
 nnoremap <silent> <Up> :resize +5<cr>
 nnoremap <silent> <Down> :resize -5<cr>
 
-silent! colorscheme gruvbox
-set background=dark
 
