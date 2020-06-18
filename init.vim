@@ -24,7 +24,7 @@ set softtabstop=2
 " === END Text formatting ===
 
 " === Pane meta-features ===
-set diffopt+=vertical " force diffs to be vertical - for fugitive
+set diffopt+=vertical         " force diffs to be vertical - for fugitive
 set splitright
 
 set cursorline
@@ -38,8 +38,8 @@ set sidescroll=1
 
 set showmode
 
-set ignorecase        " ignorecase and smartcase work together to make searches
-set smartcase         " case sensitive only when a capital letter is included
+set ignorecase                " ignorecase and smartcase work together to make searches
+set smartcase                 " case sensitive only when a capital letter is included
 
 set hlsearch
 " === END Pane meta-features ===
