@@ -58,12 +58,12 @@ nnoremap <leader>P "+P
 vnoremap <leader>p "+p
 vnoremap <leader>P "+P
 
-syntax on
-
 " force diffs to be vertical - for fugitive
 set diffopt+=vertical
 
 filetype plugin indent on
+syntax on
+
 set expandtab
 set shiftwidth=2
 set tabstop=2
