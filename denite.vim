@@ -8,10 +8,10 @@ try
 "   --glob:  Include or exclues files for searching that match the given glob
 "            (aka ignore .git files)
 "
-"call denite#custom#var('file/rec', 'command', ['rg', '--files', '--glob', '!.git'])
+call denite#custom#var('file/rec', 'command', ['rg', '--files', '--glob', '!.git'])
 
 " Use ripgrep in place of 'grep'
-"call denite#custom#var('grep', 'command', ['rg'])
+call denite#custom#var('grep', 'command', ['rg'])
 
 " Custom options for ripgrep
 "   --vimgrep:  Show results with every match on it's own line
