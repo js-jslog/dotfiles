@@ -16,7 +16,6 @@ Plug 'neoclide/coc-tsserver', {'do': 'yarn install --frozen-lockfile'}
 Plug 'HerringtonDarkholme/yats.vim'
 "Plug 'vim-airline/vim-airline'
 "Plug 'vim-airline/vim-airline-themes'
-Plug 'w0rp/ale'
 Plug 'kien/ctrlp.vim'
 ""Plug 'kana/vim-fakeclip'
 Plug 'morhetz/gruvbox'
