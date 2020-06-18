@@ -1,6 +1,7 @@
 set nocompatible              " be iMproved, required
 set shell=/bin/bash           " force the type of shell - needed specifically in windows ubuntu
-set smartcase
+set ignorecase                " ignorecase and smartcase work together to make searches
+set smartcase                 " case sensitive only when a capital letter is included
 set encoding=utf-8
 
 filetype off                  " required
@@ -71,7 +72,6 @@ set number
 set cursorline
 set cursorcolumn
 set visualbell
-set ignorecase
 set splitright
 
 " Scrolling
