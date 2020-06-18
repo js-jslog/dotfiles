@@ -103,4 +103,4 @@ nnoremap <silent> <Down> :resize -5<cr>
 silent! colorscheme gruvbox
 set background=dark
 
-set noshowmode
+set showmode
