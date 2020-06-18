@@ -65,12 +65,15 @@ nnoremap <silent> <Right> :vertical resize +5<cr>
 nnoremap <silent> <Left> :vertical resize -5<cr>
 nnoremap <silent> <Up> :resize +5<cr>
 nnoremap <silent> <Down> :resize -5<cr>
-
-
 " ============================================================
 " === END Key bindings
 " ============================================================
 
+
+" ============================================================
+" === Options
+" ============================================================
+"
 " === Text formatting ===
 filetype plugin indent on
 syntax on
@@ -83,7 +86,6 @@ set shiftwidth=2
 set tabstop=2
 set softtabstop=2
 " === END Text formatting ===
-
 
 " === Pane meta-features ===
 set diffopt+=vertical " force diffs to be vertical - for fugitive
@@ -121,3 +123,7 @@ autocmd FocusGained * call AbsoluteNumbers()
 autocmd InsertEnter * call AbsoluteNumbers()
 autocmd InsertLeave * call RelativeNumbers()
 " === END Line number ===
+"
+" ============================================================
+" === END Options
+" ============================================================
