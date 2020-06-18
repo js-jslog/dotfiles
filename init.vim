@@ -39,6 +39,10 @@ let g:coc_global_extensions = [
   \ ]
 " === COC end (see nvim/after/plugin/coc.vim for the rest) ===
 
+" ============================================================
+" === Key bindings
+" ============================================================
+
 imap jk <ESC>
 
 :nnoremap <F8> :let @/='\<<C-R>=expand("<cword>")<CR>\>'<CR>:set hls<CR>
@@ -54,6 +58,17 @@ nnoremap <leader>p "+p
 nnoremap <leader>P "+P
 vnoremap <leader>p "+p
 vnoremap <leader>P "+P
+"
+" resize panes
+nnoremap <silent> <Right> :vertical resize +5<cr>
+nnoremap <silent> <Left> :vertical resize -5<cr>
+nnoremap <silent> <Up> :resize +5<cr>
+nnoremap <silent> <Down> :resize -5<cr>
+
+
+" ============================================================
+" === END Key bindings
+" ============================================================
 
 " === Text formatting ===
 filetype plugin indent on
@@ -105,11 +120,3 @@ autocmd FocusGained * call AbsoluteNumbers()
 autocmd InsertEnter * call AbsoluteNumbers()
 autocmd InsertLeave * call RelativeNumbers()
 " === END Line number ===
-
-" resize panes
-nnoremap <silent> <Right> :vertical resize +5<cr>
-nnoremap <silent> <Left> :vertical resize -5<cr>
-nnoremap <silent> <Up> :resize +5<cr>
-nnoremap <silent> <Down> :resize -5<cr>
-
-
