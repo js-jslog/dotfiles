@@ -78,21 +78,21 @@ set scrolloff=1
 set sidescrolloff=15
 set sidescroll=1
 
-" Toggle relative numbering and set to absolute on loss of focus and insert
-" mode
-set rnu
-function! ToggleNumbersOn()
-    set nu!
-    set rnu
+" === Line numbers ===
+" Relative numbers in normal mode
+" Absolute numbers in insert mode
+function! RelativeNumbers()
+  set number relativenumber
 endfunction
-function! ToggleRelativeOn()
-    set rnu!
-    set nu
+function! AbsoluteNumbers()
+  set number norelativenumber
 endfunction
-autocmd FocusLost * call ToggleRelativeOn() " This looks like it should be the other function
-autocmd FocusGained * call ToggleRelativeOn()
-autocmd InsertEnter * call ToggleRelativeOn() " This looks like it should be the other function
-autocmd InsertLeave * call ToggleRelativeOn()
+call RelativeNumbers()
+autocmd FocusLost * call RelativeNumbers()
+autocmd FocusGained * call AbsoluteNumbers()
+autocmd InsertEnter * call AbsoluteNumbers()
+autocmd InsertLeave * call RelativeNumbers()
+" === END Line number ===
 
 " resize panes
 nnoremap <silent> <Right> :vertical resize +5<cr>
