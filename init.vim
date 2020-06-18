@@ -41,7 +41,6 @@ let g:coc_global_extensions = [
 
 imap jk <ESC>
 
-:set hlsearch
 :nnoremap <F8> :let @/='\<<C-R>=expand("<cword>")<CR>\>'<CR>:set hls<CR>
 :noremap <F4> :set hlsearch! hlsearch?<CR>
 
@@ -84,6 +83,8 @@ set showmode
 
 set ignorecase        " ignorecase and smartcase work together to make searches
 set smartcase         " case sensitive only when a capital letter is included
+
+set hlsearch
 " === END Pane meta-features ===
 
 " === Line numbers ===
