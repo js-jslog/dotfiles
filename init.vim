@@ -70,8 +70,8 @@ autocmd InsertLeave * call RelativeNumbers()
 
 imap jk <ESC>
 
-:nnoremap <F8> :let @/='\<<C-R>=expand("<cword>")<CR>\>'<CR>:set hls<CR>
-:noremap <F4> :set hlsearch! hlsearch?<CR>
+nnoremap <F8> :let @/='\<<C-R>=expand("<cword>")<CR>\>'<CR>:set hls<CR>
+noremap <F4> :set hlsearch! hlsearch?<CR>
 
 " === Navigate between panes ===
 nmap <C-h> <C-w>h
