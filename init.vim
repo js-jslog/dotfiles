@@ -1,7 +1,5 @@
 set nocompatible              " be iMproved, required
 set shell=/bin/bash           " force the type of shell - needed specifically in windows ubuntu
-set ignorecase                " ignorecase and smartcase work together to make searches
-set smartcase                 " case sensitive only when a capital letter is included
 set encoding=utf-8
 
 filetype off                  " required
@@ -83,6 +81,9 @@ set sidescrolloff=15
 set sidescroll=1
 
 set showmode
+
+set ignorecase        " ignorecase and smartcase work together to make searches
+set smartcase         " case sensitive only when a capital letter is included
 " === END Pane meta-features ===
 
 " === Line numbers ===
