@@ -1,7 +1,10 @@
 " ========== Denite setup Copied from example @ (see next line) ===============
 " == https://github.com/ctaylo21/jarvis/blob/master/config/nvim/init.vim#L58 ==
+"
+"
 " Wrap in try/catch to avoid errors on initial install before plugin is available
 try
+  " === Denite setup ==="
 " Use ripgrep for searching current directory for files
 " By default, ripgrep will respect rules in .gitignore
 "   --files: Print each file that would be searched (but don't search)
@@ -65,12 +68,6 @@ call s:profile(s:denite_options)
 catch
   echo 'Denite not installed. It should work after running :PlugInstall'
 endtry
-
-
-
-
-
-
 
 
 
