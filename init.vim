@@ -14,15 +14,8 @@ Plug 'neoclide/coc-prettier', {'do': 'yarn install --frozen-lockfile'}
 Plug 'neoclide/coc-snippets', {'do': 'yarn install --frozen-lockfile'}
 Plug 'neoclide/coc-tsserver', {'do': 'yarn install --frozen-lockfile'}
 Plug 'HerringtonDarkholme/yats.vim'
-"Plug 'vim-airline/vim-airline'
-"Plug 'vim-airline/vim-airline-themes'
 Plug 'Shougo/denite.nvim'
-""Plug 'kana/vim-fakeclip'
 Plug 'morhetz/gruvbox'
-"Plug 'takac/vim-hardtime'
-""Plug 'pangloss/vim-javascript'
-""Plug 'mxw/vim-jsx'
-"Plug 'powerline/powerline-fonts'
 Plug 'tpope/vim-fugitive'
 ""Plug 'tpope/vim-surround'
 ""Plug 'tpope/vim-speeddating'
@@ -30,7 +23,6 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-vinegar'
 "Plug 'junegunn/gv.vim'
-""Plug 'majutsushi/tagbar'
 "Plug 'mmai/vim-markdown-wiki'
 call plug#end()
 
@@ -54,9 +46,6 @@ imap jk <ESC>
 :nnoremap <F8> :let @/='\<<C-R>=expand("<cword>")<CR>\>'<CR>:set hls<CR>
 :noremap <F4> :set hlsearch! hlsearch?<CR>
 
-" ONLY USEFUL IF REMAPPING , IN TMUX
-" imap m. ,
-
 nmap <C-h> <C-w>h
 nmap <C-j> <C-w>j
 nmap <C-k> <C-w>k
@@ -69,7 +58,6 @@ vnoremap <leader>p "+p
 vnoremap <leader>P "+P
 
 syntax on
-" filetype plugin indent on
 
 " force diffs to be vertical - for fugitive
 set diffopt+=vertical
@@ -116,37 +104,3 @@ silent! colorscheme gruvbox
 set background=dark
 
 set noshowmode
-
-"let g:airline_theme="base16"
-"
-"" air-line
-"let g:airline_powerline_fonts = 1
-"
-"" activate hardtime
-"let g:hardtime_default_on = 1
-"
-" ctrlp can see hidden files
-let g:ctrlp_show_hidden = 1
-let g:ctrlp_custom_ignore = '\v[\/](node_modules|.git)$'
-
-"
-nnoremap <leader>. :CtrlPTag<cr>
-nnoremap <silent> <Leader>b :TagbarToggle<CR>
-
-" Asynchronous Lint Engine (ALE)
-" Limit linters used for JavaScript.
-let g:ale_linters = {
-\  'javascript': ['eslint', 'flow'],
-\  'typescript': ['tsserver', 'eslint'],
-\}
-highlight clear ALEErrorSign " otherwise uses error bg color (typically red)
-highlight clear ALEWarningSign " otherwise uses warn bg color (typically yellow)
-let g:ale_sign_error = 'X' " could use emoji
-let g:ale_sign_warning = '?' " could use emoji
-let g:ale_statusline_format = ['X %d', '? %d', '']
-" %linter% is the name of the linter that provided the message
-" %s is the error or warning message
-let g:ale_echo_msg_format = '%linter% says %s'
-" Map keys to navigate between lines with errors and warnings.
-nnoremap <leader>an :ALENextWrap<cr>
-nnoremap <leader>ap :ALEPreviousWrap<cr>
