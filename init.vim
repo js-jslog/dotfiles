@@ -61,6 +61,7 @@ vnoremap <leader>P "+P
 " force diffs to be vertical - for fugitive
 set diffopt+=vertical
 
+" === Text formatting ===
 filetype plugin indent on
 syntax on
 
@@ -68,6 +69,9 @@ set expandtab
 set shiftwidth=2
 set tabstop=2
 set softtabstop=2
+" === END Text formatting ===
+
+
 set cursorline
 set cursorcolumn
 set visualbell
