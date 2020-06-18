@@ -58,9 +58,6 @@ nnoremap <leader>P "+P
 vnoremap <leader>p "+p
 vnoremap <leader>P "+P
 
-" force diffs to be vertical - for fugitive
-set diffopt+=vertical
-
 " === Text formatting ===
 filetype plugin indent on
 syntax on
@@ -72,15 +69,21 @@ set softtabstop=2
 " === END Text formatting ===
 
 
-set cursorline
-set cursorcolumn
-set visualbell
+" === Pane meta-features ===
+set diffopt+=vertical " force diffs to be vertical - for fugitive
 set splitright
 
-" Scrolling
+set cursorline
+set cursorcolumn
+
+set visualbell
+
 set scrolloff=1
 set sidescrolloff=15
 set sidescroll=1
+
+set showmode
+" === END Pane meta-features ===
 
 " === Line numbers ===
 " Relative numbers in normal mode
@@ -107,4 +110,3 @@ nnoremap <silent> <Down> :resize -5<cr>
 silent! colorscheme gruvbox
 set background=dark
 
-set showmode
