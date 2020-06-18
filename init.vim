@@ -73,23 +73,27 @@ imap jk <ESC>
 :nnoremap <F8> :let @/='\<<C-R>=expand("<cword>")<CR>\>'<CR>:set hls<CR>
 :noremap <F4> :set hlsearch! hlsearch?<CR>
 
-" Navigate between panes
+" === Navigate between panes ===
 nmap <C-h> <C-w>h
 nmap <C-j> <C-w>j
 nmap <C-k> <C-w>k
 nmap <C-l> <C-w>l
+" === END Navigate between panes ===
 
-" Paste from clipboard
+" === Paste from clipboard ===
 nnoremap <leader>p "+p
 nnoremap <leader>P "+P
 vnoremap <leader>p "+p
 vnoremap <leader>P "+P
+" === END Paste from clipboard ===
 
-" resize panes
+" === Resize panes ===
 nnoremap <silent> <Right> :vertical resize +5<cr>
 nnoremap <silent> <Left> :vertical resize -5<cr>
 nnoremap <silent> <Up> :resize +5<cr>
 nnoremap <silent> <Down> :resize -5<cr>
+" === END Resize panes ===
+
 " ============================================================
 " === END Key bindings
 " ============================================================
