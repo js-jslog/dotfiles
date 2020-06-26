@@ -1,8 +1,16 @@
 [user]
   email = jhs4jbs@hotmail.co.uk
   name = js-jslog
+[mergetool "nvim"]
+  cmd = nvim -f -c \"Gdiffsplit!\" \"$MERGED\"
+[merge]
+  tool = nvim
+[mergetool]
+  prompt = false
+[difftool "nvim"]
+  cmd = nvim -f -c \"Gdiffsplit!\" \"$LOCAL\" \"$REMOTE\""
 [diff]
-  tool = vimdiff
+  tool = nvim
 [difftool]
   prompt = false
 [alias]
