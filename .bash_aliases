@@ -43,3 +43,5 @@ alias gl="git log"
 alias gf="git fetch"
 alias gm="git checkout master"
 alias ga="git add --all"
+
+alias vim="nvim"
