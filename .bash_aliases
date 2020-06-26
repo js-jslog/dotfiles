@@ -30,6 +30,8 @@ alias development="cd /mnt/md0/Beast/development/"
 
 # ls
 alias la="ls -lha"
+alias ll='ls -alF'
+alias l='ls -CF'
 
 # git
 alias gs="git status"
