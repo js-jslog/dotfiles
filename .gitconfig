@@ -8,7 +8,7 @@
 [mergetool]
   prompt = false
 [difftool "nvim"]
-  cmd = nvim -f -c \"Gdiffsplit!\" \"$LOCAL\" \"$REMOTE\""
+  cmd = nvim -f -c \"Gdiffsplit!\" \"$LOCAL\" \"$REMOTE\"
 [diff]
   tool = nvim
 [difftool]
