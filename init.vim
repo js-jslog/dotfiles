@@ -2,40 +2,10 @@
 " === Plugins
 " ============================================================
 call plug#begin()
-Plug 'neoclide/coc.nvim' , {'branch': 'release'}
-Plug 'neoclide/coc-eslint', {'do': 'yarn install --frozen-lockfile'}
-Plug 'neoclide/coc-json', {'do': 'yarn install --frozen-lockfile'}
-Plug 'neoclide/coc-pairs', {'do': 'yarn install --frozen-lockfile'}
-Plug 'neoclide/coc-prettier', {'do': 'yarn install --frozen-lockfile'}
-Plug 'neoclide/coc-snippets', {'do': 'yarn install --frozen-lockfile'}
-Plug 'neoclide/coc-tsserver', {'do': 'yarn install --frozen-lockfile'}
-Plug 'HerringtonDarkholme/yats.vim'
-Plug 'maxmellon/vim-jsx-pretty'
-Plug 'Shougo/denite.nvim'
-Plug 'morhetz/gruvbox'
 Plug 'tpope/vim-fugitive'
-""Plug 'tpope/vim-surround'
-""Plug 'tpope/vim-speeddating'
-""Plug 'tpope/vim-sleuth'
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-vinegar'
-"Plug 'junegunn/gv.vim'
-"Plug 'mmai/vim-markdown-wiki'
 call plug#end()
-
-" === COC extensions ===
-" Keeping this coc config separate from from coc.vim config file since it
-" makes sense for this list of extensions near the same list defined for Plug
-" above.
-let g:coc_global_extensions = [
-  \ 'coc-eslint',
-  \ 'coc-json',
-  \ 'coc-pairs',
-  \ 'coc-prettier',
-  \ 'coc-snippets',
-  \ 'coc-tsserver',
-  \ ]
-" === COC end (see nvim/after/plugin/coc.vim for the rest) ===
 "
 " ============================================================
 " === END Plugins
