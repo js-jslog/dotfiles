@@ -6,6 +6,11 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-vinegar'
 Plug 'neovim/nvim-lspconfig'
+
+Plug 'kyazdani42/nvim-web-devicons'
+Plug 'nvim-lua/popup.nvim'
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim'
 call plug#end()
 "
 " ============================================================
@@ -28,6 +33,16 @@ EOF
 " ============================================================
 "
 "
+" ============================================================
+" === Telescope mapings
+" ============================================================
+nnoremap <leader>ff <cmd>lua require('telescope.builtin').find_files()<cr>
+nnoremap <leader>fg <cmd>lua require('telescope.builtin').live_grep()<cr>
+nnoremap <leader>fb <cmd>lua require('telescope.builtin').buffers()<cr>
+nnoremap <leader>fh <cmd>lua require('telescope.builtin').help_tags()<cr>
+" ============================================================
+" === END Telescope mapings
+" ============================================================
 " ============================================================
 " === Options
 " ============================================================
