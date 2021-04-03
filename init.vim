@@ -7,6 +7,8 @@ Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-vinegar'
 Plug 'neovim/nvim-lspconfig'
 
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
@@ -18,19 +20,54 @@ call plug#end()
 " ============================================================
 "
 "
-" ============================================================
-" === LSP setup
-" === Useful resources:
-" === - https://github.com/neovim/nvim-lspconfig
-" ============================================================
 "
+"
+" ============================================================
+" === LUA config
+" ==== LSP setup
+" ==== Useful resources:
+" ==== - https://github.com/neovim/nvim-lspconfig
+" ==== Treesitter setup
+" ============================================================
 lua << EOF
 require'lspconfig'.tsserver.setup{}
+require'nvim-treesitter.configs'.setup {
+  ensure_installed = {
+    "javascript",
+    "typescript",
+    "tsx",
+    "json",
+    "html",
+    "bash",
+    "yaml",
+    "lua",
+    "css",
+    "regex",
+    "ql",
+    "query",
+  },
+  highlight = {
+    enable = true,
+  },
+  incremental_selection = {
+    enable = true,
+    keymaps = {
+      init_selection = "gnn",
+      node_incremental = "grn",
+      scope_incremental = "grc",
+      node_decremental = "grm",
+    },
+  },
+  indent = {
+    enable = true
+  },
+}
 EOF
-""
 " ============================================================
-" === END LSP setup
+" === END LUA config
 " ============================================================
+"
+"
 "
 "
 " ============================================================
