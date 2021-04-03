@@ -7,6 +7,7 @@ Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-vinegar'
 Plug 'neovim/nvim-lspconfig'
 
+Plug 'nvim-lua/completion-nvim'
 Plug 'hoob3rt/lualine.nvim'
 Plug 'christianchiarulli/nvcode-color-schemes.vim'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
@@ -34,22 +35,9 @@ call plug#end()
 " ==== - https://github.com/hoob3rt/lualine.nvim
 " ============================================================
 lua << EOF
-require'lspconfig'.tsserver.setup{}
+require'lspconfig'.tsserver.setup{on_attach=require'completion'.on_attach}
 require'nvim-treesitter.configs'.setup {
-  ensure_installed = {
-    "javascript",
-    "typescript",
-    "tsx",
-    "json",
-    "html",
-    "bash",
-    "yaml",
-    "lua",
-    "css",
-    "regex",
-    "ql",
-    "query",
-  },
+  ensure_installed = "all",
   highlight = {
     enable = true,
   },
@@ -75,6 +63,26 @@ EOF
 "
 "
 "
+"=============================================================
+" === Completion nvim
+" === - https://github.com/nvim-lua/completion-nvim
+"=============================================================
+inoremap <expr> <C-j>   pumvisible() ? "\<C-n>" : "\<C-j>"
+inoremap <expr> <C-k> pumvisible() ? "\<C-p>" : "\<C-k>"
+imap <C-space> <Plug>(completion_smart_tab)
+
+" Set completeopt to have a better completion experience
+set completeopt=menuone,noinsert,noselect
+
+" Avoid showing message extra message when using completion
+set shortmess+=c
+"=============================================================
+" === END Completion nvim
+"=============================================================
+"
+"
+"
+"
 " ============================================================
 " === Telescope mapings
 " ============================================================
@@ -85,6 +93,10 @@ nnoremap <leader>fh <cmd>lua require('telescope.builtin').help_tags()<cr>
 " ============================================================
 " === END Telescope mapings
 " ============================================================
+"
+"
+"
+"
 " ============================================================
 " === Options
 " ============================================================
