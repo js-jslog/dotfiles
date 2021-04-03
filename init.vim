@@ -7,6 +7,7 @@ Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-vinegar'
 Plug 'neovim/nvim-lspconfig'
 
+Plug 'hoob3rt/lualine.nvim'
 Plug 'christianchiarulli/nvcode-color-schemes.vim'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
@@ -29,6 +30,8 @@ call plug#end()
 " ==== - https://github.com/neovim/nvim-lspconfig
 " ==== Treesitter setup
 " ==== - https://github.com/nvim-treesitter/nvim-treesitter
+" ==== LuaLine setup
+" ==== - https://github.com/hoob3rt/lualine.nvim
 " ============================================================
 lua << EOF
 require'lspconfig'.tsserver.setup{}
@@ -63,6 +66,7 @@ require'nvim-treesitter.configs'.setup {
     enable = true
   },
 }
+require('lualine').setup{}
 EOF
 " ============================================================
 " === END LUA config
