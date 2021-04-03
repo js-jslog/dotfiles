@@ -25,9 +25,9 @@ call plug#end()
 " ============================================================
 " === LUA config
 " ==== LSP setup
-" ==== Useful resources:
 " ==== - https://github.com/neovim/nvim-lspconfig
 " ==== Treesitter setup
+" ==== - https://github.com/nvim-treesitter/nvim-treesitter
 " ============================================================
 lua << EOF
 require'lspconfig'.tsserver.setup{}
