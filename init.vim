@@ -59,8 +59,8 @@ filetype off                  " required
 filetype plugin indent on
 syntax on
 
-silent! colorscheme gruvbox
-set background=dark
+"silent! colorscheme gruvbox
+"set background=dark
 
 set expandtab
 set shiftwidth=2
