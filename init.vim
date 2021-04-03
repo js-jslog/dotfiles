@@ -7,6 +7,7 @@ Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-vinegar'
 Plug 'neovim/nvim-lspconfig'
 
+Plug 'christianchiarulli/nvcode-color-schemes.vim'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
 Plug 'kyazdani42/nvim-web-devicons'
@@ -96,8 +97,14 @@ filetype off                  " required
 filetype plugin indent on
 syntax on
 
-"silent! colorscheme gruvbox
-"set background=dark
+let g:nvcode_termcolors=256
+syntax on
+colorscheme gruvbox
+" checks if your terminal has 24-bit color support
+if (has("termguicolors"))
+    set termguicolors
+    hi LineNr ctermbg=NONE guibg=NONE
+endif
 
 set expandtab
 set shiftwidth=2
