@@ -25,44 +25,6 @@ call plug#end()
 "
 "
 "
-" ============================================================
-" === LUA config
-" ==== LSP setup
-" ==== - https://github.com/neovim/nvim-lspconfig
-" ==== Treesitter setup
-" ==== - https://github.com/nvim-treesitter/nvim-treesitter
-" ==== LuaLine setup
-" ==== - https://github.com/hoob3rt/lualine.nvim
-" ============================================================
-lua << EOF
-require'lspconfig'.tsserver.setup{on_attach=require'completion'.on_attach}
-require'nvim-treesitter.configs'.setup {
-  ensure_installed = "all",
-  highlight = {
-    enable = true,
-  },
-  incremental_selection = {
-    enable = true,
-    keymaps = {
-      init_selection = "gnn",
-      node_incremental = "grn",
-      scope_incremental = "grc",
-      node_decremental = "grm",
-    },
-  },
-  indent = {
-    enable = true
-  },
-}
-require('lualine').setup{}
-EOF
-" ============================================================
-" === END LUA config
-" ============================================================
-"
-"
-"
-"
 "=============================================================
 " === Completion nvim
 " === - https://github.com/nvim-lua/completion-nvim
@@ -205,3 +167,37 @@ nnoremap <silent> <Down> :resize -5<cr>
 " === END Key bindings
 " ============================================================
 
+" ============================================================
+" === LUA config
+" ==== LSP setup
+" ==== - https://github.com/neovim/nvim-lspconfig
+" ==== Treesitter setup
+" ==== - https://github.com/nvim-treesitter/nvim-treesitter
+" ==== LuaLine setup
+" ==== - https://github.com/hoob3rt/lualine.nvim
+" ============================================================
+lua << EOF
+require'lspconfig'.tsserver.setup{on_attach=require'completion'.on_attach}
+require'nvim-treesitter.configs'.setup {
+  ensure_installed = "all",
+  highlight = {
+    enable = true,
+  },
+  incremental_selection = {
+    enable = true,
+    keymaps = {
+      init_selection = "gnn",
+      node_incremental = "grn",
+      scope_incremental = "grc",
+      node_decremental = "grm",
+    },
+  },
+  indent = {
+    enable = true
+  },
+}
+require('lualine').setup{}
+EOF
+" ============================================================
+" === END LUA config
+" ============================================================
