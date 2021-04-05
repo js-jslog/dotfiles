@@ -2,45 +2,28 @@
 " === Plugins
 " ============================================================
 call plug#begin()
-Plug 'neoclide/coc.nvim' , {'branch': 'release'}
-Plug 'neoclide/coc-eslint', {'do': 'yarn install --frozen-lockfile'}
-Plug 'neoclide/coc-json', {'do': 'yarn install --frozen-lockfile'}
-Plug 'neoclide/coc-pairs', {'do': 'yarn install --frozen-lockfile'}
-Plug 'neoclide/coc-prettier', {'do': 'yarn install --frozen-lockfile'}
-Plug 'neoclide/coc-snippets', {'do': 'yarn install --frozen-lockfile'}
-Plug 'neoclide/coc-tsserver', {'do': 'yarn install --frozen-lockfile'}
-Plug 'HerringtonDarkholme/yats.vim'
-Plug 'maxmellon/vim-jsx-pretty'
-Plug 'Shougo/denite.nvim'
-Plug 'morhetz/gruvbox'
 Plug 'tpope/vim-fugitive'
-""Plug 'tpope/vim-surround'
-""Plug 'tpope/vim-speeddating'
-""Plug 'tpope/vim-sleuth'
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-vinegar'
-"Plug 'junegunn/gv.vim'
-"Plug 'mmai/vim-markdown-wiki'
+Plug 'neovim/nvim-lspconfig'
+Plug 'hrsh7th/nvim-compe'
+Plug 'glepnir/lspsaga.nvim'
+Plug 'hoob3rt/lualine.nvim'
+Plug 'christianchiarulli/nvcode-color-schemes.vim'
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+" Required for Telescope
+Plug 'nvim-lua/popup.nvim'
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim'
+" END Required for Telescope
+" Optional for Telescope
+Plug 'kyazdani42/nvim-web-devicons'
+" END optional for Telescope
 call plug#end()
-
-" === COC extensions ===
-" Keeping this coc config separate from from coc.vim config file since it
-" makes sense for this list of extensions near the same list defined for Plug
-" above.
-let g:coc_global_extensions = [
-  \ 'coc-eslint',
-  \ 'coc-json',
-  \ 'coc-pairs',
-  \ 'coc-prettier',
-  \ 'coc-snippets',
-  \ 'coc-tsserver',
-  \ ]
-" === COC end (see nvim/after/plugin/coc.vim for the rest) ===
 "
 " ============================================================
 " === END Plugins
 " ============================================================
-"
 "
 "
 " ============================================================
@@ -59,8 +42,14 @@ filetype off                  " required
 filetype plugin indent on
 syntax on
 
-silent! colorscheme gruvbox
-set background=dark
+let g:nvcode_termcolors=256
+syntax on
+colorscheme gruvbox
+" checks if your terminal has 24-bit color support
+if (has("termguicolors"))
+    set termguicolors
+    hi LineNr ctermbg=NONE guibg=NONE
+endif
 
 set expandtab
 set shiftwidth=2
@@ -108,9 +97,8 @@ autocmd InsertLeave * call RelativeNumbers()
 " ============================================================
 " === END Options
 " ============================================================
-
-
-
+"
+"
 " ============================================================
 " === Key bindings
 " ============================================================
@@ -140,7 +128,74 @@ nnoremap <silent> <Left> :vertical resize -5<cr>
 nnoremap <silent> <Up> :resize +5<cr>
 nnoremap <silent> <Down> :resize -5<cr>
 " === END Resize panes ===
-
+"
+" ============================================================
+" === Telescope mapings
+" ============================================================
+nnoremap <leader>ff <cmd>lua require('telescope.builtin').find_files()<cr>
+nnoremap <leader>fg <cmd>lua require('telescope.builtin').live_grep()<cr>
+nnoremap <leader>fb <cmd>lua require('telescope.builtin').buffers()<cr>
+nnoremap <leader>fh <cmd>lua require('telescope.builtin').help_tags()<cr>
+" ============================================================
+" === END Telescope mapings
+" ============================================================
+"
+"=============================================================
+" === Compe completion
+" === - https://github.com/hrsh7th/nvim-compe
+"=============================================================
+inoremap <silent><expr> <C-Space> compe#complete()
+inoremap <silent><expr> <CR>      compe#confirm('<CR>')
+inoremap <silent><expr> <C-e>     compe#close('<C-e>')
+inoremap <silent><expr> <C-f>     compe#scroll({ 'delta': +4 })
+inoremap <silent><expr> <C-d>     compe#scroll({ 'delta': -4 })
+"=============================================================
+" === END Compe
+"=============================================================
+"
+"=============================================================
+" === LSPSAGA
+" === - https://github.com/glepnir/lspsaga.nvim
+"=============================================================
+nnoremap <silent> gh <cmd>lua require'lspsaga.provider'.lsp_finder()<CR>
+" -- code action
+nnoremap <silent><leader>ca <cmd>lua require('lspsaga.codeaction').code_action()<CR>
+vnoremap <silent><leader>ca :<C-U>lua require('lspsaga.codeaction').range_code_action()<CR>
+" -- show hover doc
+nnoremap <silent> K <cmd>lua require('lspsaga.hover').render_hover_doc()<CR>
+nnoremap <silent> <C-f> <cmd>lua require('lspsaga.action').smart_scroll_with_saga(1)<CR>
+nnoremap <silent> <C-b> <cmd>lua require('lspsaga.action').smart_scroll_with_saga(-1)<CR>
+" -- show signature help
+nnoremap <silent> gs <cmd>lua require('lspsaga.signaturehelp').signature_help()<CR>
+" -- rename
+nnoremap <silent>gr <cmd>lua require('lspsaga.rename').rename()<CR>
+" -- preview definition
+nnoremap <silent> gd <cmd>lua require'lspsaga.provider'.preview_definition()<CR>
+" -- show
+nnoremap <silent><leader>cd <cmd>lua require'lspsaga.diagnostic'.show_line_diagnostics()<CR>
+" -- only show diagnostic if cursor is over the area
+nnoremap <silent><leader>cc <cmd>lua require'lspsaga.diagnostic'.show_cursor_diagnostics()<CR>
+" -- jump diagnostic
+nnoremap <silent> [e <cmd>lua require'lspsaga.diagnostic'.lsp_jump_diagnostic_prev()<CR>
+nnoremap <silent> ]e <cmd>lua require'lspsaga.diagnostic'.lsp_jump_diagnostic_next()<CR>
+" -- float terminal also you can pass the cli command in open_float_terminal function
+nnoremap <silent> <A-d> <cmd>lua require('lspsaga.floaterm').open_float_terminal()<CR> -- or open_float_terminal('lazygit')<CR>
+tnoremap <silent> <A-d> <C-\><C-n>:lua require('lspsaga.floaterm').close_float_terminal()<CR>
+"=============================================================
+" === END LSPSAGA
+"=============================================================
+"
+"
 " ============================================================
 " === END Key bindings
 " ============================================================
+"
+" ============================================================
+" === LUA config - must be at end of file
+" ============================================================
+lua require('lsp_config')
+"lua require('lspsaga_config')
+lua require('treesitter_config')
+lua require('compe_config')
+" Lualine docs: https://github.com/hoob3rt/lualine.nvim
+lua require('lualine').setup{}
