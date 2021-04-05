@@ -10,11 +10,14 @@ Plug 'hrsh7th/nvim-compe'
 Plug 'hoob3rt/lualine.nvim'
 Plug 'christianchiarulli/nvcode-color-schemes.vim'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
-
-Plug 'kyazdani42/nvim-web-devicons'
+" Required for Telescope
 Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
+" END All required for Telescope
+" Optional for Telescope
+Plug 'kyazdani42/nvim-web-devicons'
+" END optional for Telescope
 call plug#end()
 "
 " ============================================================
