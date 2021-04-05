@@ -14,7 +14,7 @@ Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
-" END All required for Telescope
+" END Required for Telescope
 " Optional for Telescope
 Plug 'kyazdani42/nvim-web-devicons'
 " END optional for Telescope
@@ -166,114 +166,10 @@ nnoremap <silent> <Down> :resize -5<cr>
 " ============================================================
 
 " ============================================================
-" === LUA config
-" ==== LSP setup
-" ==== - https://github.com/neovim/nvim-lspconfig
-" ==== Treesitter setup
-" ==== - https://github.com/nvim-treesitter/nvim-treesitter
-" ==== LuaLine setup
-" ==== - https://github.com/hoob3rt/lualine.nvim
+" === LUA config - must be at end of file
 " ============================================================
-lua << EOF
-local lspconfig = require'lspconfig'
-lspconfig.tsserver.setup{}
--- https://github.com/iamcco/diagnostic-languageserver
---- copied and modified from https://github.com/nvim-lua/wishlist/issues/9#issuecomment-693311042
-lspconfig.diagnosticls.setup{
-  filetypes={'javascript', 'javascriptreact', 'typescript', 'typescriptreact'},
-  init_options = {
-    linters = {
-      eslint = {
-        command = './node_modules/.bin/eslint',
-        rootPatterns = {'.git'},
-        debounce = 100,
-        args = {
-          '--stdin',
-          '--stdin-filename',
-          '%filepath',
-          '--format',
-          'json'
-        },
-        sourceName = 'eslint',
-        parseJson = {
-          errorsRoot = '[0].messages',
-          line = 'line',
-          column = 'column',
-          endLine = 'endLine',
-          endColumn = 'endColumn',
-          message = '${message} [${ruleId}]',
-          security = 'severity'
-        },
-        securities = {
-          [2] = 'error',
-          [1] = 'warning',
-        },
-      },
-    },
-    filetypes = {
-      javascript = 'eslint',
-      javascriptreact = 'eslint'
-      typescript = 'eslint',
-      typescriptreact = 'eslint'
-    },
-    formatters = {
-      prettier = {
-        command = "./node_modules/.bin/prettier",
-        args = {"--stdin-filepath" ,"%filepath", '--single-quote', '--print-width 120'}
-      }
-    },
-    formatFiletypes = {
-      javascript = 'prettier',
-      javascriptreact = 'prettier'
-      typescript = 'prettier',
-      typescriptreact = 'prettier'
-    },
-  }
-}
-require'nvim-treesitter.configs'.setup {
-  ensure_installed = "all",
-  highlight = {
-    enable = true,
-  },
-  incremental_selection = {
-    enable = true,
-    keymaps = {
-      init_selection = "gnn",
-      node_incremental = "grn",
-      scope_incremental = "grc",
-      node_decremental = "grm",
-    },
-  },
-  indent = {
-    enable = true
-  },
-}
-require('lualine').setup{}
-vim.o.completeopt = "menuone,noselect"
-require'compe'.setup {
-  enabled = true;
-  autocomplete = true;
-  debug = false;
-  min_length = 1;
-  preselect = 'enable';
-  throttle_time = 80;
-  source_timeout = 200;
-  incomplete_delay = 400;
-  max_abbr_width = 100;
-  max_kind_width = 100;
-  max_menu_width = 100;
-  documentation = true;
-
-  source = {
-    path = true;
-    buffer = true;
-    calc = true;
-    nvim_lsp = true;
-    nvim_lua = true;
-    vsnip = true;
-  };
-}
-EOF
-" ============================================================
-" === END LUA config
-" ============================================================
+lua require('lsp_config')
+lua require('treesitter_config')
+lua require('compe_config')
+" Lualine docs: https://github.com/hoob3rt/lualine.nvim
+lua require('lualine').setup{}
