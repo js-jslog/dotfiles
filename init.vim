@@ -6,8 +6,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-vinegar'
 Plug 'neovim/nvim-lspconfig'
-
-Plug 'nvim-lua/completion-nvim'
+Plug 'hrsh7th/nvim-compe'
 Plug 'hoob3rt/lualine.nvim'
 Plug 'christianchiarulli/nvcode-color-schemes.vim'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
@@ -25,26 +24,6 @@ call plug#end()
 "
 "
 "
-"=============================================================
-" === Completion nvim
-" === - https://github.com/nvim-lua/completion-nvim
-"=============================================================
-inoremap <expr> <C-j>   pumvisible() ? "\<C-n>" : "\<C-j>"
-inoremap <expr> <C-k> pumvisible() ? "\<C-p>" : "\<C-k>"
-imap <C-space> <Plug>(completion_smart_tab)
-
-" Set completeopt to have a better completion experience
-set completeopt=menuone,noinsert,noselect
-
-" Avoid showing message extra message when using completion
-set shortmess+=c
-"=============================================================
-" === END Completion nvim
-"=============================================================
-"
-"
-"
-"
 " ============================================================
 " === Telescope mapings
 " ============================================================
@@ -55,6 +34,22 @@ nnoremap <leader>fh <cmd>lua require('telescope.builtin').help_tags()<cr>
 " ============================================================
 " === END Telescope mapings
 " ============================================================
+"
+"
+"
+"
+"=============================================================
+" === Compe completion
+" === - https://github.com/hrsh7th/nvim-compe
+"=============================================================
+inoremap <silent><expr> <C-Space> compe#complete()
+inoremap <silent><expr> <CR>      compe#confirm('<CR>')
+inoremap <silent><expr> <C-e>     compe#close('<C-e>')
+inoremap <silent><expr> <C-f>     compe#scroll({ 'delta': +4 })
+inoremap <silent><expr> <C-d>     compe#scroll({ 'delta': -4 })
+"=============================================================
+" === END Compe
+"=============================================================
 "
 "
 "
@@ -177,7 +172,7 @@ nnoremap <silent> <Down> :resize -5<cr>
 " ==== - https://github.com/hoob3rt/lualine.nvim
 " ============================================================
 lua << EOF
-require'lspconfig'.tsserver.setup{on_attach=require'completion'.on_attach}
+require'lspconfig'.tsserver.setup{}
 require'nvim-treesitter.configs'.setup {
   ensure_installed = "all",
   highlight = {
@@ -197,6 +192,30 @@ require'nvim-treesitter.configs'.setup {
   },
 }
 require('lualine').setup{}
+vim.o.completeopt = "menuone,noselect"
+require'compe'.setup {
+  enabled = true;
+  autocomplete = true;
+  debug = false;
+  min_length = 1;
+  preselect = 'enable';
+  throttle_time = 80;
+  source_timeout = 200;
+  incomplete_delay = 400;
+  max_abbr_width = 100;
+  max_kind_width = 100;
+  max_menu_width = 100;
+  documentation = true;
+
+  source = {
+    path = true;
+    buffer = true;
+    calc = true;
+    nvim_lsp = true;
+    nvim_lua = true;
+    vsnip = true;
+  };
+}
 EOF
 " ============================================================
 " === END LUA config
